@@ -16,10 +16,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
-            'name'=>'Md. Zahid Hossain',
-            'email'=>'mzh.cit.bd@gmail.com',
-            'password'=>Hash::make('@mzhratul'),
-        ]);
+        
     }
 }

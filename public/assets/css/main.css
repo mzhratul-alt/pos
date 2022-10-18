@@ -2825,9 +2825,9 @@ h6,
 .sidebar-nav-wrapper .sidebar-nav ul .nav-item.nav-item-has-children ul {
   padding: 0px 15px;
 }
-.sidebar-nav-wrapper .sidebar-nav ul .nav-item.nav-item-has-children ul li {
+/* .sidebar-nav-wrapper .sidebar-nav ul .nav-item.nav-item-has-children ul li {
   margin-bottom: 10px;
-}
+} */
 .sidebar-nav-wrapper
   .sidebar-nav
   ul

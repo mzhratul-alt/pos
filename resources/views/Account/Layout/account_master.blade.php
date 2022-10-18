@@ -38,26 +38,6 @@
                      <span class="text">Dashboard</span>
                   </a>
                </li>
-               <li class="nav-item nav-item-has-children">
-                  <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#user_manage"
-                     aria-controls="user_manage" aria-expanded="false" aria-label="Toggle navigation">
-                     <span class="icon">
-                        <i class="lni lni-users"></i>
-                     </span>
-                     <span class="text">User Management</span>
-                  </a>
-                  <ul id="user_manage" class="dropdown-nav collapse">
-                     <li>
-                        <a href="#">All User</a>
-                     </li>
-                     <li>
-                        <a href="{{ route('admin.register_view') }}">Add New User</a>
-                     </li>
-                     <li>
-                        <a href="#">Roles</a>
-                     </li>
-                  </ul>
-               </li>
             </ul>
          </nav>
       </aside>
@@ -198,7 +178,7 @@
                               data-bs-toggle="dropdown" aria-expanded="false">
                               <div class="profile-info">
                                  <div class="info">
-                                    <h6>{{ Auth::user()->name }}</h6>
+                                    <h6>{{ Auth::guard('account')->user()->name }}</h6>
                                     <div class="image">
                                        <img src="{{asset('assets/images/profile/profile-image.png')}}" alt="" />
                                        <span class="status"></span>
@@ -225,7 +205,7 @@
                                  <a href="#0"> <i class="lni lni-cog"></i> Settings </a>
                               </li>
                               <li>
-                                 <a href="{{ route('admin.logout') }}"> <i class="lni lni-exit"></i> Sign Out </a>
+                                 <a href="{{ route('account.logout') }}"> <i class="lni lni-exit"></i> Sign Out </a>
                               </li>
                            </ul>
                         </div>

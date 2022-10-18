@@ -3,27 +3,46 @@
 namespace App\Http\Controllers\Administration\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
-    public function login(Request $request)
+
+    public function register(Request $request)
     {
-        $credentials = $request->validate([
-            'email'=>'required|email',
-            'password'=>'required|min:8|max:25',
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|unique:users,email|email',
+            'password'=>'required|min:8|max:20',
         ]);
 
-        if(Auth::attempt($credentials)){
+        User::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=>$request->password
+        ]);
+        return back()->with('success', 'User added successfully');
+    }
+    public function login(Request $request)
+    {
+
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:8|max:25',
+        ]);
+
+        if (Auth::guard('web')->attempt($credentials, $request->remember)) {
             $request->session()->regenerate();
 
             return redirect()->route('admin.dashboard');
         }
     }
 
-    public function logout(Request $request){
-        Auth::logout();
+    public function logout(Request $request)
+    {
+        Auth::guard('web')->logout();
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
