@@ -40,7 +40,7 @@
                               </p>
                            </div>
                            <div class="shape-image">
-                              <img src="assets/images/auth/shape.svg" alt="">
+                              <img src="{{ asset('assets/images/auth/shape.svg') }}" alt="">
                            </div>
                         </div>
                      </div>

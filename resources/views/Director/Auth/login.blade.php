@@ -33,7 +33,7 @@
                               <h1 class="text-primary mb-10">
                                  Welcome Back
                                  <br>~~~~~<br>
-                                 Administration Login
+                                 Director Login
                               </h1>
                               <p class="text-medium">
                                  Sign in to your Existing account to continue
@@ -54,7 +54,7 @@
                               Start creating the best possible user experience for you
                               customers.
                            </p>
-                           <form action="{{ route('admin.login') }}" method="POST" autocomplete="off">
+                           <form action="{{ route('director.login') }}" method="POST" autocomplete="off">
                               @csrf
                               <div class="row">
                                  <div class="col-12">

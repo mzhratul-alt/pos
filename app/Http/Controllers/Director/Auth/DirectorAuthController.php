@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Account\Auth;
+namespace App\Http\Controllers\Director\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
-class AccountAuthController extends Controller
+class DirectorAuthController extends Controller
 {
     public function login(Request $request)
     {
@@ -15,11 +15,10 @@ class AccountAuthController extends Controller
             'password' => 'required|min:8|max:25',
         ]);
 
-
-        if (Auth::guard('account')->attempt($credentials, $request->remember)) {
+        if (Auth::guard('director')->attempt($credentials, $request->remember)) {
 
             $request->session()->regenerate();
-            return redirect()->route('account.dashboard');
+            return redirect()->route('director.dashboard');
         } else {
             return back()->with("error', 'Credential didn't match");
         }
@@ -27,11 +26,11 @@ class AccountAuthController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::guard('account')->logout();
+        Auth::guard('director')->logout();
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('account.login_view');
+        return redirect()->route('director.login_view');
     }
 }

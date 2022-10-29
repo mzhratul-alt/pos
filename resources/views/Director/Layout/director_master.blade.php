@@ -39,22 +39,22 @@
                   </a>
                </li>
                <li class="nav-item nav-item-has-children">
-                  <a href="#0" class="collapsed" data-bs-toggle="collapse" data-bs-target="#user_manage"
-                     aria-controls="user_manage" aria-expanded="false" aria-label="Toggle navigation">
+                  <a href="#0" class="" data-bs-toggle="collapse" data-bs-target="#ddmenu_55" aria-controls="ddmenu_55"
+                     aria-expanded="true" aria-label="Toggle navigation">
                      <span class="icon">
                         <i class="lni lni-users"></i>
                      </span>
                      <span class="text">User Management</span>
                   </a>
-                  <ul id="user_manage" class="dropdown-nav collapse">
+                  <ul id="ddmenu_55" class="dropdown-nav collapse show" style="">
                      <li>
-                        <a href="#">All User</a>
+                        <a href="#"> All Users </a>
                      </li>
                      <li>
-                        <a href="{{ route('admin.register_view') }}">Add New User</a>
+                        <a href="{{ route('director.user.register_form') }}"> Add New User </a>
                      </li>
                      <li>
-                        <a href="#">Roles</a>
+                        <a href="#"> Roles </a>
                      </li>
                   </ul>
                </li>
@@ -198,7 +198,7 @@
                               data-bs-toggle="dropdown" aria-expanded="false">
                               <div class="profile-info">
                                  <div class="info">
-                                    <h6>{{ Auth::user()->name }}</h6>
+                                    <h6>{{ Auth::guard('director')->user()->name }}</h6>
                                     <div class="image">
                                        <img src="{{asset('assets/images/profile/profile-image.png')}}" alt="" />
                                        <span class="status"></span>
@@ -225,7 +225,7 @@
                                  <a href="#0"> <i class="lni lni-cog"></i> Settings </a>
                               </li>
                               <li>
-                                 <a href="{{ route('admin.logout') }}"> <i class="lni lni-exit"></i> Sign Out </a>
+                                 <a href="{{ route('director.logout') }}"> <i class="lni lni-exit"></i> Sign Out </a>
                               </li>
                            </ul>
                         </div>

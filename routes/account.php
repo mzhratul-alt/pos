@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\Account\Auth\AccountAuthController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Account\Auth\AccountAuthController;
 
 
 Route::get('/', function () {
