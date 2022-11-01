@@ -42,12 +42,5 @@ class RolePermissionSeeder extends Seeder
                 ]);
             }
         }
-
-        $develoepr = User::create([
-            'name'=>'Md. Zahid Hossain',
-            'email'=>'mzh.cit.bd@gmail.com',
-            'password'=>Hash::make('@mzhratul'),
-        ]);
-        $develoepr->givePermissionTo($permissions);
     }
 }

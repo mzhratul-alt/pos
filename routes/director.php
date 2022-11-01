@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Director\Auth\DirectorAuthController;
-
+use App\Http\Controllers\Director\User\UserController;
 
 Route::get('/', function () {
    return view('Director.Auth.login');
@@ -18,6 +18,8 @@ Route::middleware('director')->name('director.')->group(function () {
    Route::get('/logout', [DirectorAuthController::class, 'logout'])->name('logout');
 
    //User Management
+   Route::get('user', [UserController::class, 'index'])->name('all_user');
+   
    Route::get('/add-user', function(){
       return view('Director.User.add_user');
    })->name('user.register_form');

@@ -48,7 +48,7 @@
                   </a>
                   <ul id="ddmenu_55" class="dropdown-nav collapse show" style="">
                      <li>
-                        <a href="#"> All Users </a>
+                        <a href="{{ route('director.all_user') }}"> All Users </a>
                      </li>
                      <li>
                         <a href="{{ route('director.user.register_form') }}"> Add New User </a>

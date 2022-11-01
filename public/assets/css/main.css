@@ -360,11 +360,6 @@ h6,
   color: inherit;
 }
 
-.btn-sm {
-  padding: 10px 20px;
-  font-weight: 400;
-}
-
 /* buttons hover effect */
 .btn-hover {
   position: relative;
@@ -1123,7 +1118,6 @@ h6,
   border-spacing: 0px;
 }
 .table > :not(caption) > * > * {
-  padding: 15px 0;
   border-bottom-color: #efefef;
   vertical-align: middle;
 }
@@ -3020,10 +3014,10 @@ h6,
 .main-wrapper.active {
   margin-left: 0;
 }
-.main-wrapper .container-fluid {
+/* .main-wrapper .container-fluid {
   padding-left: 40px;
   padding-right: 40px;
-}
+} */
 @media (max-width: 767px) {
   .main-wrapper .container-fluid {
     padding-left: 20px;
