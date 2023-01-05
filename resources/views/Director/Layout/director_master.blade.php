@@ -22,7 +22,7 @@
       <aside class="sidebar-nav-wrapper mCustomScrollbar" data-mcs-theme="dark">
          <div class="navbar-logo">
             <a href="index.html">
-               <img src="{{ asset('assets/images/logo/logo.svg') }}" alt="logo" />
+               <img src="{{ asset('assets/images/logo/logo.png') }}" alt="logo" />
             </a>
          </div>
          <nav class="sidebar-nav">
@@ -200,7 +200,7 @@
                                  <div class="info">
                                     <h6>{{ Auth::guard('director')->user()->name }}</h6>
                                     <div class="image">
-                                       <img src="{{asset('assets/images/profile/profile-image.png')}}" alt="" />
+                                       <img src="{{asset('assets/images/profile/defaultUser.png')}}" alt="" />
                                        <span class="status"></span>
                                     </div>
                                  </div>
