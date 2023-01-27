@@ -239,13 +239,13 @@
 
          <!-- ========== section start ========== -->
          <section class="section">
-            <div class="container-fluid">
+            <div class="container">
                <!-- ========== title-wrapper start ========== -->
                <div class="title-wrapper">
                   <div class="row align-items-center py-2">
                      <div class="col-md-6">
                         <div class="titlemb-30">
-                           <h2>@yield('page_heading')</h2>
+                           <h3>@yield('page_heading')</h2>
                         </div>
                      </div>
                      <!-- end col -->

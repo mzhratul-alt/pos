@@ -19,8 +19,10 @@ Route::middleware('director')->name('director.')->group(function () {
 
    //User Management
    Route::get('user', [UserController::class, 'index'])->name('all_user');
-   
+
    Route::get('/add-user', function(){
       return view('Director.User.add_user');
    })->name('user.register_form');
+
+   Route::post('/store-user',[UserController::class,'store'])->name('user.store');
 });
