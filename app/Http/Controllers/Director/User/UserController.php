@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Director\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Director\Department as DirectorDepartment;
+use App\Models\Directors\Department;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -15,6 +17,12 @@ class UserController extends Controller
         $users = User::all();
 
         return view('Director.User.all_user', compact('users'));
+
+    }
+
+    public function create(){
+        $departments = Department::all();
+        return view('Director.User.add_user', compact('departments'));
     }
 
     public function store(Request $request){

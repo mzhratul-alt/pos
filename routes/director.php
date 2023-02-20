@@ -18,11 +18,11 @@ Route::middleware('director')->name('director.')->group(function () {
    Route::get('/logout', [DirectorAuthController::class, 'logout'])->name('logout');
 
    //User Management
-   Route::get('user', [UserController::class, 'index'])->name('all_user');
+   Route::name('user.')->group(function(){
+    Route::get('user', [UserController::class, 'index'])->name('index');
 
-   Route::get('/add-user', function(){
-      return view('Director.User.add_user');
-   })->name('user.register_form');
+   Route::get('/create', [UserController::class, 'create'])->name('create');
 
-   Route::post('/store-user',[UserController::class,'store'])->name('user.store');
+   Route::post('/store-user',[UserController::class,'store'])->name('store');
+   });
 });

@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+use App\Models\Directors\Department;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
@@ -12,6 +14,10 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasRoles,HasApiTokens, HasFactory, Notifiable;
+
+    public function departments(){
+        return $this->belongsToMany(Department::class);
+    }
 
     /**
      * The attributes that are mass assignable.
